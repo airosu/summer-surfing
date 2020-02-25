@@ -1,4 +1,11 @@
 @import './abstracts/variables';
+
 @import './base/base';
 @import './base/typography';
 
+@import './layout/general';
+@import './layout/page';
+@import './layout/header';
+@import './layout/footer';
+
+@import './modules/nav';
