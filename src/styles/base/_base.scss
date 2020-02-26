@@ -1,0 +1,31 @@
+// ------------------------------------------------------------
+// Reset / Base Styles
+// ------------------------------------------------------------
+
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul, ol {
+    list-style-type: none;
+}
+
+
+
+body {
+    font-family: $font-family__primary;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family__secondary;
+    font-weight: $font-weight__bold;
+    color: $color__text;
+}
+
+p {
+    color: $color__brand;
+}
+
