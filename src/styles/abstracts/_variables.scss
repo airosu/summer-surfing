@@ -8,8 +8,9 @@
 
 $color__brand: #5da8ef;
 
-$color__text: #333;
 
+$color__text: #333;
+$color__text--link: #0b0c11;
 
 
 
@@ -22,4 +23,12 @@ $font-family__secondary: 'Playfair Display';
 $font-weight__light: 300;
 $font-weight__normal: 400;
 $font-weight__bold: 700;
+
+
+
+// --- media ---
+
+$media__s: 576px;
+$media__m: 768px;
+$media__l: 992px;
 

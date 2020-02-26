@@ -2,9 +2,46 @@
 // Navigation
 // ------------------------------------------------------------
 
+
+
 .site-nav {
+    @extend %uppercase;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+
     &__list {
         display: flex;
+    }
+    &__item {
+        margin-right: 45px;
+    }
+    &__link {
+        &:hover {
+            color: $color__brand;
+        }
+    }
+}
+
+
+
+
+//
+// Mobile
+// ______________________________
+
+@media screen and (max-width: $media__s) {
+    .site-nav {
+        font-size: 9px;
+
+        &__list {
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        &__item {
+            margin-right: unset;
+        }
     }
 }
 
