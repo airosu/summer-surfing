@@ -1,0 +1,17 @@
+// ------------------------------------------------------------
+// Hero Section
+// ------------------------------------------------------------
+
+
+.hero {
+    display: flex;
+
+    &__text-container {
+        display: flex;
+        flex-grow: 1;
+    }
+    &__image-container {
+        display: flex;
+        flex-grow: 5;
+    }
+}

@@ -6,5 +6,27 @@
     &__header {
         margin-bottom: 45px;
     }
+    &__container {
+        max-width: 1200px;
+        width: 80%;
+        margin: 0 auto;
+    }
 }
 
+
+
+
+
+
+//
+// Tablet
+// ______________________________
+
+@media screen and (max-width: $media__l) {
+    
+    .page {
+        &__container {
+            width: 90%;
+        }
+    }
+}
