@@ -11,6 +11,10 @@
         width: 80%;
         margin: 0 auto;
     }
+    &__quote {
+        margin-top: 130px;
+        margin-bottom: 30px;
+    }
 }
 
 
@@ -25,8 +29,12 @@
 @media screen and (max-width: $media__l) {
     
     .page {
+        &__header {
+            margin-bottom: 25px;
+        }
         &__container {
             width: 90%;
         }
     }
 }
+

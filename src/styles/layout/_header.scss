@@ -9,14 +9,14 @@
     padding: 20px 0;
 
     &__logo {
-        flex-grow: 1;
+        flex: 1;
         display: flex;
     }
 
 
     &__nav {
         display: flex;
-        flex-grow: 5;
+        flex: 5;
     }
 }
 
