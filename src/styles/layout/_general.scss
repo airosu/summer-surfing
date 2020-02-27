@@ -3,13 +3,6 @@
 // ------------------------------------------------------------
 
 
-
-// grid
-
-
-// breakpoints
-
-
 $s: 540px;
 $m: 720px;
 $l: 960px;
@@ -23,7 +16,22 @@ $breakpoint-med: 720px;
 $breakpoint-large: 960px;
 
 
-.container {
+
+.container-test2 {
+    max-width: 1200px;
+    width: 80%;
+    margin: 0 auto;
+
+    @media screen and (max-width: $media__l) {
+        width: 90%;
+    }
+}
+
+
+
+
+
+.container-test {
     width: 90%;
     margin-right: auto;
     margin-left: auto;
@@ -37,62 +45,28 @@ $breakpoint-large: 960px;
     }
 }
 
-.row {
-    width: 100%;
-}
 
-.row [class^="col"] {
-    min-height: 0.125rem;
-}
 
-.col-1,
-.col-2,
-.col-3,
-.col-4,
-.col-5,
-.col-6,
-.col-7,
-.col-8,
-.col-9,
-.col-10,
-.col-11,
-.col-12 {
-    width: $width;
-}
 
-.col-1-sm { width:($width / 12) - ($gutter * 11 / 12); }
-.col-2-sm { width: ($width / 6) - ($gutter * 10 / 12); }
-.col-3-sm { width: ($width / 4) - ($gutter * 9 / 12); }
-.col-4-sm { width: ($width / 3) - ($gutter * 8 / 12); }
-.col-5-sm { width: ($width / (12 / 5)) - ($gutter * 7 / 12); }
-.col-6-sm { width: ($width / 2) - ($gutter * 6 / 12); }
-.col-7-sm { width: ($width / (12 / 7)) - ($gutter * 5 / 12); }
-.col-8-sm { width: ($width / (12 / 8)) - ($gutter * 4 / 12); }
-.col-9-sm { width: ($width / (12 / 9)) - ($gutter * 3 / 12); }
-.col-10-sm { width: ($width / (12 / 10)) - ($gutter * 2 / 12); }
-.col-11-sm { width: ($width / (12 / 11)) - ($gutter * 1 / 12); }
-.col-12-sm { width: $width; }
+//
+// Tablet
+// ______________________________
 
-@media only screen and (min-width: $breakpoint-med) {
-    .row {
-        display: flex;
-        justify-content: space-between;
-    }
-    .col-1 { width:($width / 12) - ($gutter * 11 / 12); }
-    .col-2 { width: ($width / 6) - ($gutter * 10 / 12); }
-    .col-3 { width: ($width / 4) - ($gutter * 9 / 12); }
-    .col-4 { width: ($width / 3) - ($gutter * 8 / 12); }
-    .col-5 { width: ($width / (12 / 5)) - ($gutter * 7 / 12); }
-    .col-6 { width: ($width / 2) - ($gutter * 6 / 12); }
-    .col-7 { width: ($width / (12 / 7)) - ($gutter * 5 / 12); }
-    .col-8 { width: ($width / (12 / 8)) - ($gutter * 4 / 12); }
-    .col-9 { width: ($width / (12 / 9)) - ($gutter * 3 / 12); }
-    .col-10 { width: ($width / (12 / 10)) - ($gutter * 2 / 12); }
-    .col-11 { width: ($width / (12 / 11)) - ($gutter * 1 / 12); }
-    .col-12 { width: $width; }
+@media screen and (max-width: $media__l) {}
 
-    .hidden-sm {
-        display: block;
-    }
-}
 
+
+
+//
+// Mobile - Medium
+// ______________________________
+
+@media screen and (max-width: $media__m) {}
+
+
+
+//
+// Mobile - Small
+// ______________________________
+
+@media screen and (max-width: $media__s) {}

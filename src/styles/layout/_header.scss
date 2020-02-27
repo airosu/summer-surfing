@@ -2,3 +2,42 @@
 // Header Layout
 // ------------------------------------------------------------
 
+
+
+.header {
+    display: flex;
+    padding: 20px 0;
+
+    &__logo {
+        flex: 1;
+        display: flex;
+    }
+
+
+    &__nav {
+        display: flex;
+        flex: 5;
+    }
+}
+
+
+
+
+//
+// Tablet
+// ______________________________
+
+@media screen and (max-width: $media__l) {
+    .header {
+        display: block;
+
+        &__logo {
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        &__nav {
+            justify-content: center;
+        }
+    }
+}
+

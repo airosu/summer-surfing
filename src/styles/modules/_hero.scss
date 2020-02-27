@@ -1,0 +1,45 @@
+// ------------------------------------------------------------
+// Hero Section
+// ------------------------------------------------------------
+
+
+.hero {
+    display: flex;
+
+    &__text-container {
+        position: relative;
+        display: flex;
+        flex: 1;
+    }
+    &__text {
+        position: absolute;
+        top: 65px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.4);
+        width: 700px;
+    }
+    &__image-container {
+        display: flex;
+        flex: 5;
+    }
+}
+
+
+
+//
+// Tablet
+// ______________________________
+
+@media screen and (max-width: $media__l) {
+    .hero {
+        display: block;
+
+        &__text {
+            width: 100%;
+            position: static;
+            text-align: center;
+            margin-bottom: 45px;
+        }
+    }
+}
+

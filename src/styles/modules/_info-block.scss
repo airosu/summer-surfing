@@ -1,0 +1,66 @@
+// ------------------------------------------------------------
+// General / Grid
+// ------------------------------------------------------------
+
+
+
+.info-block {
+    &__title {
+        font-size: 37px;
+        margin-bottom: 20px;
+
+        &--underline {
+            position: relative;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 23px;
+                height: 2px;
+                background-color: $color__brand;
+                margin-top: 4px;
+            }
+        }
+    }
+
+
+    &__subtitle {
+        @extend %uppercase;
+        color: $color__brand;
+        font-size: 12px;
+    }
+    &__description {
+        color: $color__text--light;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    &__link {
+        @extend %uppercase;
+        font-size: 12px;
+        border-bottom: 2px solid $color__brand;
+
+        &:hover {
+            color: $color__brand--dark;
+        }
+    }
+}
+
+
+
+//
+// Tablet
+// ______________________________
+
+@media screen and (max-width: $media__l) {
+
+    .info-block {
+        &__title {
+            &--underline {
+                &::after {
+                    content: none;
+                    // display: none;
+                }
+            }
+        }
+    }
+}

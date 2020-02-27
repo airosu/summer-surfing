@@ -7,9 +7,14 @@
 // --- Colors ---
 
 $color__brand: #5da8ef;
+$color__brand--dark: #1576d1;
 
+
+$color__text--light: #757575;
 $color__text: #333;
 
+
+$color__link: #0b0c11;
 
 
 
@@ -19,7 +24,20 @@ $font-family__primary: 'Poppins', sans-serif;
 $font-family__secondary: 'Playfair Display';
 
 
+$font-weight__lightest: 100;
+$font-weight__lighter: 200;
 $font-weight__light: 300;
 $font-weight__normal: 400;
+$font-weight__semibold: 600;
 $font-weight__bold: 700;
+$font-weight__extrabold: 800;
+$font-weight__boldest: 900;
+
+
+
+// --- media ---
+
+$media__s: 576px;
+$media__m: 768px;
+$media__l: 992px;
 

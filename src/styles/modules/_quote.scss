@@ -1,0 +1,40 @@
+// ------------------------------------------------------------
+// Quote
+// ------------------------------------------------------------
+
+
+.quote {
+    &__inner {
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    &__text {
+        color: $color__text--light;
+        letter-spacing: 1.1px;
+        font: {
+            family: $font-family__secondary;
+            weight: $font-weight__normal;
+            size: 18px;
+        }
+    }
+    &__name {
+        @extend %uppercase;
+        font-size: 12px;
+        margin-top: 15px;
+    }
+}
+
+
+
+//
+// Tablet
+// ______________________________
+
+@media screen and (max-width: $media__l) {
+    .quote {
+        &__inner {
+            width: 90%;
+        }
+    }
+}
