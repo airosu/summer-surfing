@@ -6,7 +6,7 @@
 
 .site-nav {
     @extend %uppercase;
-    font-size: 12px;
+    font-size: 1.2rem;
     display: flex;
     align-items: center;
 
@@ -14,7 +14,7 @@
         display: flex;
     }
     &__item {
-        margin-right: 45px;
+        margin-right: 4.5rem;
         &:last-child {
             margin-right: 0;
         }
@@ -30,7 +30,7 @@
 
 @media screen and (max-width: $media__s) {
     .site-nav {
-        font-size: 9px;
+        font-size: 0.9rem;
 
         &__list {
             width: 100%;

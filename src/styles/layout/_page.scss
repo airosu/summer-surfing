@@ -3,17 +3,22 @@
 // ------------------------------------------------------------
 
 .page {
-    &__header {
-        margin-bottom: 45px;
-    }
     &__container {
-        max-width: 1200px;
+        max-width: 120rem;
         width: 80%;
         margin: 0 auto;
     }
-    &__quote {
-        margin-top: 130px;
-        margin-bottom: 30px;
+    &__section {
+        margin-top: 4.5rem;
+        margin-bottom: 13rem;
+
+        &--short {
+            margin-bottom: 3.5rem;
+        }
+    }
+
+    &__separator {
+        margin: 3rem 0;
     }
 }
 
@@ -29,11 +34,31 @@
 @media screen and (max-width: $media__l) {
     
     .page {
-        &__header {
-            margin-bottom: 25px;
-        }
         &__container {
             width: 90%;
+        }
+        &__section {
+            margin-bottom: 9.5rem;
+        }
+    }
+}
+
+
+
+//
+// Mobile - Small
+// ______________________________
+
+@media screen and (max-width: $media__s) {
+
+    .page {
+        &__section {
+            margin-top: 3rem;
+            margin-bottom: 7rem;
+
+            &--short {
+                margin-bottom: 3.5rem;
+            }
         }
     }
 }

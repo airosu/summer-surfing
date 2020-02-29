@@ -11,17 +11,17 @@
     }
     &__text {
         color: $color__text--light;
-        letter-spacing: 1.1px;
+        letter-spacing: 0.11rem;
         font: {
             family: $font-family__secondary;
             weight: $font-weight__normal;
-            size: 18px;
+            size: 1.8rem;
         }
     }
     &__name {
         @extend %uppercase;
-        font-size: 12px;
-        margin-top: 15px;
+        font-size: 1.2rem;
+        margin-top: 1.5rem;
     }
 }
 
