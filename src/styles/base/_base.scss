@@ -7,6 +7,10 @@
     font-size: 62.5%;
 }
 
+::selection {
+    background-color: $color__brand;
+    color: #000;
+}
 
 *, *::before, *::after {
     padding: 0;

@@ -1,0 +1,68 @@
+// ------------------------------------------------------------
+// Carousel Block
+// ------------------------------------------------------------
+
+
+
+.carousel {
+    margin: 0 6rem; /* space for prev/next buttons */
+
+    &__cell {
+        width: calc(100% / 3);
+        max-height: 400px;
+        margin-right: 10px;
+        border-radius: 5px;
+        counter-increment: gallery-cell;
+    }
+}
+
+
+
+.flickity-prev-next-button {
+    top: 67%;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+
+    &.previous {
+        left: -40px;
+    }
+    &.next {
+        right: -40px;
+    }
+    &.no-svg {
+        color: white;
+    }
+
+    &:hover {
+        color: $color__text;
+    }
+}
+
+.flickity-button {
+    color: $color__text--light;
+}
+
+.flickity-page-dots {
+    bottom: -20%;
+}
+
+
+
+//
+// Tablet
+// ______________________________
+
+@media screen and (max-width: $media__l) {
+
+    .carousel {
+        &__cell {
+            width: 100%;
+        }
+    }
+
+    .flickity-page-dots {
+        bottom: -15%;
+    }
+}
+

@@ -5,9 +5,17 @@
 .page {
     &__container {
         max-width: 120rem;
-        width: 80%;
+        width: 90%;
         margin: 0 auto;
+
+        &--large {
+            max-width: 144rem;
+        }
+        &--full-width {
+            width: 100%;
+        }
     }
+
     &__section {
         margin-top: 4.5rem;
         margin-bottom: 13rem;
@@ -15,6 +23,9 @@
         &--short {
             margin-bottom: 3.5rem;
         }
+    }
+    &__section-heading {
+        margin-bottom: 1.5rem;
     }
 
     &__separator {
@@ -37,6 +48,7 @@
         &__container {
             width: 90%;
         }
+
         &__section {
             margin-bottom: 9.5rem;
         }
@@ -52,6 +64,12 @@
 @media screen and (max-width: $media__s) {
 
     .page {
+        &__container {
+            &--large {
+                width: 100%;
+            }
+        }
+
         &__section {
             margin-top: 3rem;
             margin-bottom: 7rem;

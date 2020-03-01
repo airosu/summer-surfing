@@ -1,16 +1,16 @@
 // ------------------------------------------------------------
-// General / Grid
+// Board Tile
 // ------------------------------------------------------------
 
 
 .board-tile {
     display: flex;
-    max-width: 50rem;
+    max-width: 40rem;
     width: 100%;
 
     &__media {
         position: relative;
-        width: 50%;
+        width: 60%;
     }
     &__image {
         display: block;
@@ -29,11 +29,10 @@
 
     &__body-container {
         display: flex;
-        width: 50%;
+        width: 40%;
     }
     &__body {
-        margin: auto 0 auto -15%;
-        padding-top: 35%;
+        margin: 120% 0 auto -25%;
     }
 
     &__tagline {
@@ -45,7 +44,7 @@
         color: $color__text--light;
     }
     &__title {
-        font-size: 2.3rem;
+        font-size: 2.2rem;
         font-weight: $font-weight__normal;
         text-transform: capitalize;
         padding-left: 0.5rem;
@@ -53,14 +52,62 @@
     }
 
     &__price {
-        padding-left: 37%;
+        margin-bottom: -0.3rem;
+        padding-left: 5.7rem;
         color: $color__purple--light;
         font-weight: $font-weight__light;
+        font-size: 1.6rem;
     }
-    &__action {
+    &__status {
         @extend %uppercase;
-        padding-left: 37%;
         font-size: 0.9rem;
+        padding-left: 5.7rem;
+        color: $color__text;
+
+        &--sold-out {
+            color: $color__red--dark;
+        }
+    }
+}
+
+
+
+
+
+//
+// Mobile
+// ______________________________
+
+@media screen and (max-width: $media__m) {
+
+    .board-tile {
+        &__title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        &__tagline {
+            font-size: 0.9rem;
+        }
+        &__price {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+
+//
+// Mobile - XS
+// ______________________________
+
+@media screen and (max-width: $media__xs) {
+
+    .board-tile {
+        &__price {
+            padding-left: 4.5rem;
+        }
+        &__status {
+            padding-left: 4.5rem;
+        }
     }
 }
 

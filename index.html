@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="./dist/css/vendors/flickity.min.css">
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,500,600,700|Poppins:300,400,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./dist/css/main.min.css">
         <title>Document</title>
@@ -106,41 +107,130 @@
 
             <!-- Boards Carousel -->
             <section class="page__section">
-                <div class="page__container" style="display: flex;">
-
-                    <div class="board-tile">
-                        <div class="board-tile__media">
-                            <img class="board-tile__image" src="./images/boards/board1.png" alt="">
-                            <div class="board-tile__background"></div>
-                        </div>
-                        <div class="board-tile__body-container">
-                            <div class="board-tile__body">
-                                <div class="board-tile__tagline">Funboards</div>
-                                <h4 class="board-tile__title">Chilli rare bird</h4>
-                                <div class="board-tile__price">750 $</div>
-                                <div class="board-tile__action">Details</div>
-                            </div>
+                <div class="page__container page__container--large page__container--full-width">
+                    <div class="page__section-heading">
+                        <div class="info-block info-block--centered">
+                            <div class="info-block__subtitle">View</div>
+                            <h1 class="info-block__title">Surfboards</h1>
                         </div>
                     </div>
 
-                    <div class="board-tile">
-                        <div class="board-tile__media">
-                            <img class="board-tile__image" src="./images/boards/board2.png" alt="">
-                            <div class="board-tile__background"></div>
+                    <div class="carousel" data-flickity='{ "wrapAround": true }'>
+                        <div class="carousel__cell">
+                            <div class="board-tile">
+                                <div class="board-tile__media">
+                                    <img class="board-tile__image" src="./images/boards/board1.png" alt="">
+                                    <div class="board-tile__background"></div>
+                                </div>
+                                <div class="board-tile__body-container">
+                                    <div class="board-tile__body">
+                                        <div class="board-tile__tagline">Shortboards</div>
+                                        <h4 class="board-tile__title">Mini moon</h4>
+                                        <div class="board-tile__price">$745 AUD</div>
+                                        <div class="board-tile__status">In stock</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="board-tile__body-container">
-                            <div class="board-tile__body">
-                                <div class="board-tile__tagline">Funboards</div>
-                                <h4 class="board-tile__title">Chilli rare bird</h4>
-                                <div class="board-tile__price">750 $</div>
-                                <div class="board-tile__action">Details</div>
+                        <div class="carousel__cell">
+                            <div class="board-tile">
+                                <div class="board-tile__media">
+                                    <img class="board-tile__image" src="./images/boards/board2.png" alt="">
+                                    <div class="board-tile__background"></div>
+                                </div>
+                                <div class="board-tile__body-container">
+                                    <div class="board-tile__body">
+                                        <div class="board-tile__tagline">Shortboards</div>
+                                        <h4 class="board-tile__title">Short Black</h4>
+                                        <div class="board-tile__price">$745 AUD</div>
+                                        <div class="board-tile__status board-tile__status--sold-out">Sold out</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel__cell">
+                            <div class="board-tile">
+                                <div class="board-tile__media">
+                                    <img class="board-tile__image" src="./images/boards/board3.png" alt="">
+                                    <div class="board-tile__background"></div>
+                                </div>
+                                <div class="board-tile__body-container">
+                                    <div class="board-tile__body">
+                                        <div class="board-tile__tagline">Funboards</div>
+                                        <h4 class="board-tile__title">Black Coffey</h4>
+                                        <div class="board-tile__price">$845 AUD</div>
+                                        <div class="board-tile__status">In stock</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel__cell">
+                            <div class="board-tile">
+                                <div class="board-tile__media">
+                                    <img class="board-tile__image" src="./images/boards/board4.png" alt="">
+                                    <div class="board-tile__background"></div>
+                                </div>
+                                <div class="board-tile__body-container">
+                                    <div class="board-tile__body">
+                                        <div class="board-tile__tagline">Funboards</div>
+                                        <h4 class="board-tile__title">Moon Doggie</h4>
+                                        <div class="board-tile__price">$795 AUD</div>
+                                        <div class="board-tile__status">In stock</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel__cell">
+                            <div class="board-tile">
+                                <div class="board-tile__media">
+                                    <img class="board-tile__image" src="./images/boards/board6.png" alt="">
+                                    <div class="board-tile__background"></div>
+                                </div>
+                                <div class="board-tile__body-container">
+                                    <div class="board-tile__body">
+                                        <div class="board-tile__tagline">Longboards</div>
+                                        <h4 class="board-tile__title">Minimal</h4>
+                                        <div class="board-tile__price">$875 AUD</div>
+                                        <div class="board-tile__status">In stock</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel__cell">
+                            <div class="board-tile">
+                                <div class="board-tile__media">
+                                    <img class="board-tile__image" src="./images/boards/board7.png" alt="">
+                                    <div class="board-tile__background"></div>
+                                </div>
+                                <div class="board-tile__body-container">
+                                    <div class="board-tile__body">
+                                        <div class="board-tile__tagline">Funboards</div>
+                                        <h4 class="board-tile__title">Single Fin</h4>
+                                        <div class="board-tile__price">$795 AUD</div>
+                                        <div class="board-tile__status board-tile__status--sold-out">Sold Out</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel__cell">
+                            <div class="board-tile">
+                                <div class="board-tile__media">
+                                    <img class="board-tile__image" src="./images/boards/board5.png" alt="">
+                                    <div class="board-tile__background"></div>
+                                </div>
+                                <div class="board-tile__body-container">
+                                    <div class="board-tile__body">
+                                        <div class="board-tile__tagline">Longboards</div>
+                                        <h4 class="board-tile__title">Classic Mal</h4>
+                                        <div class="board-tile__price">$1,595 AUD</div>
+                                        <div class="board-tile__status">In stock</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </section> <!-- Boards Carousel END -->
-
 
 
         </main> <!-- Main END -->
@@ -149,6 +239,9 @@
         <footer class="page__footer footer">
 
         </footer> <!-- Footer END -->
+
+        <script src="./dist/js/vendors/flickity.min.js"></script>
+        <script src="./dist/js/main.js"></script>
     </body>
 </html>
 
