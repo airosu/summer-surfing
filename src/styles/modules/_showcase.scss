@@ -1,0 +1,52 @@
+// ------------------------------------------------------------
+// Showcase
+// ------------------------------------------------------------
+
+
+.showcase {
+    display: flex;
+    position: relative;
+
+    &__block {
+        width: 50%;
+
+        &--large {
+            width: 70%;
+            margin-left: -4%;
+            margin-top: 4%;
+            z-index: 1;
+
+            .showcase {
+                &__image {
+                    box-shadow: -9px 8px 33px 4px rgba(0, 0, 0, 0.4);
+                }
+            }
+        }
+    }
+
+    &__body {
+        width: 60%;
+        margin: 3rem auto 0;
+    }
+}
+
+
+
+//
+// Mobile - Small
+// ______________________________
+
+@media screen and (max-width: $media__s) {
+
+    .showcase {
+        margin-bottom: 22rem;
+
+        &__body {
+            position: absolute;
+            width: 100%;
+            padding-top: 17%;
+            text-align: center;
+        }
+    }
+}
+

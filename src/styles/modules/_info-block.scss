@@ -6,8 +6,9 @@
 
 .info-block {
     &__title {
-        font-size: 37px;
-        margin-bottom: 20px;
+        font-size: 3.7rem;
+        margin-bottom: 2rem;
+        text-transform: capitalize;
 
         &--underline {
             position: relative;
@@ -15,10 +16,10 @@
             &::after {
                 content: '';
                 display: block;
-                width: 23px;
-                height: 2px;
+                width: 2.3rem;
+                height: 0.2rem;
                 background-color: $color__brand;
-                margin-top: 4px;
+                margin-top: 0.4rem;
             }
         }
     }
@@ -27,21 +28,25 @@
     &__subtitle {
         @extend %uppercase;
         color: $color__brand;
-        font-size: 12px;
+        font-size: 1.2rem;
     }
     &__description {
         color: $color__text--light;
-        font-size: 14px;
-        margin-bottom: 20px;
+        font-size: 1.4rem;
+        margin-bottom: 2rem;
     }
     &__link {
         @extend %uppercase;
-        font-size: 12px;
-        border-bottom: 2px solid $color__brand;
+        font-size: 1.2rem;
+        border-bottom: 0.2rem solid $color__brand;
 
         &:hover {
             color: $color__brand--dark;
         }
+    }
+
+    &--centered {
+        text-align: center;
     }
 }
 
@@ -58,9 +63,33 @@
             &--underline {
                 &::after {
                     content: none;
-                    // display: none;
                 }
             }
         }
     }
 }
+
+
+//
+// Mobile - Small
+// ______________________________
+
+@media screen and (max-width: $media__s) {
+
+    .info-block {
+        &__title {
+            font-size: 3.2rem;
+        }
+        &__subtitle {
+            font-size: 1rem;
+        }
+        &__description {
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+        &__link {
+            font-size: 1.1rem;
+        }
+    }
+}
+

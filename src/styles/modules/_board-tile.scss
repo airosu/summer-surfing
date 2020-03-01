@@ -1,0 +1,113 @@
+// ------------------------------------------------------------
+// Board Tile
+// ------------------------------------------------------------
+
+
+.board-tile {
+    display: flex;
+    max-width: 40rem;
+    width: 100%;
+
+    &__media {
+        position: relative;
+        width: 60%;
+    }
+    &__image {
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+    }
+    &__background {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        height: 65%;
+        background-color: $color__board-background;
+    }
+
+    &__body-container {
+        display: flex;
+        width: 40%;
+    }
+    &__body {
+        margin: 120% 0 auto -25%;
+    }
+
+    &__tagline {
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        letter-spacing: 0.24rem;
+        font-weight: $font-weight__light;
+        line-height: 1;
+        color: $color__text--light;
+    }
+    &__title {
+        font-size: 2.2rem;
+        font-weight: $font-weight__normal;
+        text-transform: capitalize;
+        padding-left: 0.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    &__price {
+        margin-bottom: -0.3rem;
+        padding-left: 5.7rem;
+        color: $color__purple--light;
+        font-weight: $font-weight__light;
+        font-size: 1.6rem;
+    }
+    &__status {
+        @extend %uppercase;
+        font-size: 0.9rem;
+        padding-left: 5.7rem;
+        color: $color__text;
+
+        &--sold-out {
+            color: $color__red--dark;
+        }
+    }
+}
+
+
+
+
+
+//
+// Mobile
+// ______________________________
+
+@media screen and (max-width: $media__m) {
+
+    .board-tile {
+        &__title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        &__tagline {
+            font-size: 0.9rem;
+        }
+        &__price {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+
+//
+// Mobile - XS
+// ______________________________
+
+@media screen and (max-width: $media__xs) {
+
+    .board-tile {
+        &__price {
+            padding-left: 4.5rem;
+        }
+        &__status {
+            padding-left: 4.5rem;
+        }
+    }
+}
+

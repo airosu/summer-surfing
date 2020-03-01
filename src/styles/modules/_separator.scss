@@ -1,0 +1,56 @@
+// ------------------------------------------------------------
+// General / Grid
+// ------------------------------------------------------------
+
+.separator {
+    display: flex;
+    justify-content: center;
+
+    &__line {
+        width: 0.2rem;
+        height: 10rem;
+        background-color: $color__brand;
+    }
+}
+
+
+
+
+//
+// Tablet
+// ______________________________
+
+@media screen and (max-width: $media__l) {}
+
+
+
+
+
+//
+// Mobile - Medium
+// ______________________________
+
+@media screen and (max-width: $media__m) {
+
+    .separator {
+        &__line {
+            height: 7rem;
+        }
+    }
+}
+
+
+
+//
+// Mobile - Small
+// ______________________________
+
+@media screen and (max-width: $media__s) {
+
+    .separator {
+        &__line {
+            height: 4.5rem;
+        }
+    }
+}
+

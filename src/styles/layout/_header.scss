@@ -6,11 +6,11 @@
 
 .header {
     display: flex;
-    padding: 20px 0;
+    padding: 2rem 0;
 
     &__logo {
-        flex: 1;
         display: flex;
+        flex: 1;
     }
 
 
@@ -33,7 +33,7 @@
 
         &__logo {
             justify-content: center;
-            margin-bottom: 15px;
+            margin-bottom: 1.5rem;
         }
         &__nav {
             justify-content: center;

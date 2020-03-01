@@ -1,50 +1,6 @@
 // ------------------------------------------------------------
-// General / Grid
+// General Layout
 // ------------------------------------------------------------
-
-
-$s: 540px;
-$m: 720px;
-$l: 960px;
-$xl: 1200px;
-
-
-$width: 98%;
-$gutter: 2%;
-$breakpoint-small: 540px;
-$breakpoint-med: 720px;
-$breakpoint-large: 960px;
-
-
-
-.container-test2 {
-    max-width: 1200px;
-    width: 80%;
-    margin: 0 auto;
-
-    @media screen and (max-width: $media__l) {
-        width: 90%;
-    }
-}
-
-
-
-
-
-.container-test {
-    width: 90%;
-    margin-right: auto;
-    margin-left: auto;
-
-    @media only screen and (min-width: $breakpoint-small) {
-        width: 80%;
-    }
-
-    @media only screen and (min-width: $breakpoint-large) {
-        max-width: 1200px;
-    }
-}
-
 
 
 
@@ -66,7 +22,9 @@ $breakpoint-large: 960px;
 
 
 //
-// Mobile - Small
+// Mobile
 // ______________________________
 
 @media screen and (max-width: $media__s) {}
+
+

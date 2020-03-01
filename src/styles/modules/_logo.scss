@@ -4,7 +4,7 @@
 
 
 .logo {
-    font-size: 40px;
+    font-size: 4rem;
     color: $color__brand;
 }
 
@@ -16,7 +16,7 @@
 
 @media screen and (max-width: $media__s) {
     .logo {
-        font-size: 35px;
+        font-size: 3.5rem;
     }
 }
 

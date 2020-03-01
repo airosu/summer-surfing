@@ -4,14 +4,16 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Poppins:300,400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./dist/css/vendors/flickity.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,500,600,700|Poppins:300,400,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./dist/css/main.min.css">
         <title>Document</title>
     </head>
     <body class="page">
-        <div class="page__container">
 
-            <!-- Header -->
+
+        <!-- Header -->
+        <div class="page__container">
             <header class="page__header header">
                 <div class="header__logo">
                     <i class="logo icon-surf"></i>
@@ -33,15 +35,17 @@
                     </ul>
                 </nav>
             </header> <!-- Header END -->
+        </div>
 
 
 
 
-            <!-- Main -->
-            <main class="page__main">
-                <section class="page__section">
+        <!-- Main -->
+        <main class="page__main">
+            <section class="page__section">
+                <div class="page__container">
                     <div class="hero">
-                        <div class="hero__text-container">
+                        <div class="hero__body">
                             <div class="hero__text">
                                 <div class="info-block">
                                     <div class="info-block__subtitle">Your</div>
@@ -53,33 +57,192 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="hero__image-container">
-                            <img src="./images/hero1.jpg" alt="Your Summer Escape" class="hero__image">
+                        <div class="hero__media">
+                            <img class="hero__image" src="./images/hero.jpg" alt="Your Summer Escape">
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
 
-                <section class="page__section">
+            <!-- Quote 1 -->
+            <section class="page__section page__section--short">
+                <div class="page__container">
                     <div class="quote page__quote">
                         <div class="quote__inner">
                             <p class="quote__text">“Surfing is the most blissful experience you can have on this planet, a taste of heaven.”</p>
                             <div class="quote__name">John McCarthy</div>
                         </div>
                     </div>
-
-                    <div class="vertical-line">
-                        <div class="vertical-line__object"></div>
+    
+                    <div class="separator page__separator">
+                        <div class="separator__line"></div>
                     </div>
-                </section>
-            </main> <!-- Main END -->
+                </div>
+            </section> <!-- Quote 1 END -->
 
 
-            <!-- Footer -->
-            <footer class="page__footer footer">
+            <!-- Showcase -->
+            <section class="page__section">
+                <div class="page__container">
+                    <div class="showcase">
+                        <div class="showcase__block showcase__block--small">
+                            <img class="showcase__image" src="./images/img2.jpg" alt="">
+                            <div class="showcase__body">
+                                <div class="info-block">
+                                    <p class="info-block__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam reprehenderit corporis blanditiis cum consectetur illo?</p>
+                                    <div class="info-block__action">
+                                        <a href="#" class="info-block__link">Read more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="showcase__block showcase__block--large">
+                            <img class="showcase__image" src="./images/img7.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section> <!-- Showcase END -->
 
-            </footer> <!-- Footer END -->
-        </div>
+
+            <!-- Boards Carousel -->
+            <section class="page__section">
+                <div class="page__container page__container--large page__container--full-width">
+                    <div class="page__section-heading">
+                        <div class="info-block info-block--centered">
+                            <div class="info-block__subtitle">View</div>
+                            <h1 class="info-block__title">Surfboards</h1>
+                        </div>
+                    </div>
+
+                    <div class="carousel" data-flickity='{ "wrapAround": true }'>
+                        <div class="carousel__cell">
+                            <div class="board-tile">
+                                <div class="board-tile__media">
+                                    <img class="board-tile__image" src="./images/boards/board1.png" alt="">
+                                    <div class="board-tile__background"></div>
+                                </div>
+                                <div class="board-tile__body-container">
+                                    <div class="board-tile__body">
+                                        <div class="board-tile__tagline">Shortboards</div>
+                                        <h4 class="board-tile__title">Mini moon</h4>
+                                        <div class="board-tile__price">$745 AUD</div>
+                                        <div class="board-tile__status">In stock</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel__cell">
+                            <div class="board-tile">
+                                <div class="board-tile__media">
+                                    <img class="board-tile__image" src="./images/boards/board2.png" alt="">
+                                    <div class="board-tile__background"></div>
+                                </div>
+                                <div class="board-tile__body-container">
+                                    <div class="board-tile__body">
+                                        <div class="board-tile__tagline">Shortboards</div>
+                                        <h4 class="board-tile__title">Short Black</h4>
+                                        <div class="board-tile__price">$745 AUD</div>
+                                        <div class="board-tile__status board-tile__status--sold-out">Sold out</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel__cell">
+                            <div class="board-tile">
+                                <div class="board-tile__media">
+                                    <img class="board-tile__image" src="./images/boards/board3.png" alt="">
+                                    <div class="board-tile__background"></div>
+                                </div>
+                                <div class="board-tile__body-container">
+                                    <div class="board-tile__body">
+                                        <div class="board-tile__tagline">Funboards</div>
+                                        <h4 class="board-tile__title">Black Coffey</h4>
+                                        <div class="board-tile__price">$845 AUD</div>
+                                        <div class="board-tile__status">In stock</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel__cell">
+                            <div class="board-tile">
+                                <div class="board-tile__media">
+                                    <img class="board-tile__image" src="./images/boards/board4.png" alt="">
+                                    <div class="board-tile__background"></div>
+                                </div>
+                                <div class="board-tile__body-container">
+                                    <div class="board-tile__body">
+                                        <div class="board-tile__tagline">Funboards</div>
+                                        <h4 class="board-tile__title">Moon Doggie</h4>
+                                        <div class="board-tile__price">$795 AUD</div>
+                                        <div class="board-tile__status">In stock</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel__cell">
+                            <div class="board-tile">
+                                <div class="board-tile__media">
+                                    <img class="board-tile__image" src="./images/boards/board6.png" alt="">
+                                    <div class="board-tile__background"></div>
+                                </div>
+                                <div class="board-tile__body-container">
+                                    <div class="board-tile__body">
+                                        <div class="board-tile__tagline">Longboards</div>
+                                        <h4 class="board-tile__title">Minimal</h4>
+                                        <div class="board-tile__price">$875 AUD</div>
+                                        <div class="board-tile__status">In stock</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel__cell">
+                            <div class="board-tile">
+                                <div class="board-tile__media">
+                                    <img class="board-tile__image" src="./images/boards/board7.png" alt="">
+                                    <div class="board-tile__background"></div>
+                                </div>
+                                <div class="board-tile__body-container">
+                                    <div class="board-tile__body">
+                                        <div class="board-tile__tagline">Funboards</div>
+                                        <h4 class="board-tile__title">Single Fin</h4>
+                                        <div class="board-tile__price">$795 AUD</div>
+                                        <div class="board-tile__status board-tile__status--sold-out">Sold Out</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel__cell">
+                            <div class="board-tile">
+                                <div class="board-tile__media">
+                                    <img class="board-tile__image" src="./images/boards/board5.png" alt="">
+                                    <div class="board-tile__background"></div>
+                                </div>
+                                <div class="board-tile__body-container">
+                                    <div class="board-tile__body">
+                                        <div class="board-tile__tagline">Longboards</div>
+                                        <h4 class="board-tile__title">Classic Mal</h4>
+                                        <div class="board-tile__price">$1,595 AUD</div>
+                                        <div class="board-tile__status">In stock</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> <!-- Boards Carousel END -->
+
+
+        </main> <!-- Main END -->
+
+        <!-- Footer -->
+        <footer class="page__footer footer">
+
+        </footer> <!-- Footer END -->
+
+        <script src="./dist/js/vendors/flickity.min.js"></script>
+        <script src="./dist/js/main.js"></script>
     </body>
 </html>
+
 
