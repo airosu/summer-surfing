@@ -1,0 +1,77 @@
+// ------------------------------------------------------------
+// Board Tile
+// ------------------------------------------------------------
+
+
+
+.article {
+    display: flex;
+
+    &__body {
+        display: flex;
+        align-items: center;
+        width: 40%;
+        // padding-right: 4rem;
+
+        &--left {
+            padding-right: 4rem;
+        }
+        &--right {
+            padding-left: 4rem;
+        }
+    }
+
+    &__media {
+        width: 60%;
+    }
+}
+
+
+
+
+
+
+//
+// Tablet
+// ______________________________
+
+@media screen and (max-width: $media__l) {
+
+    .article {
+        display: block;
+
+        &__body {
+            width: 100%;
+            margin-bottom: 5rem;
+
+            &--left {
+                padding-right: 0;
+                text-align: left;
+            }
+            &--right {
+                padding-left: 0;
+                text-align: right;
+            }
+        }
+
+        &__media {
+            width: 100%;
+        }
+
+        &--inverted {
+            display: flex;
+            flex-direction: column;
+
+            .article {
+                &__body {
+                    order: 1;
+                }
+                &__media {
+                    order: 2;
+                }
+            }
+        }
+    }
+}
+
+

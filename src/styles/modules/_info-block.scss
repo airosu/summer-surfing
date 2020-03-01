@@ -5,6 +5,8 @@
 
 
 .info-block {
+    position: relative;
+
     &__title {
         font-size: 3.7rem;
         margin-bottom: 2rem;
@@ -44,6 +46,14 @@
             color: $color__brand--dark;
         }
     }
+    &__background-number {
+        display: inline-block;
+        position: absolute;
+        top: -10.9rem;
+        font-size: 12.5rem;
+        font-weight: $font-weight__semibold--thin;
+        color: rgba(237, 237, 237, 0.4);
+    }
 
     &--centered {
         text-align: center;
@@ -64,6 +74,17 @@
                 &::after {
                     content: none;
                 }
+            }
+        }
+
+        &__background-number {
+            &--left {
+                top: -9rem;
+                left: 0;
+            }
+            &--right {
+                top: -9rem;
+                right: 0;
             }
         }
     }

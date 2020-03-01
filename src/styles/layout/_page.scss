@@ -11,6 +11,9 @@
         &--large {
             max-width: 144rem;
         }
+        &--small {
+            max-width: 90rem;
+        }
         &--full-width {
             width: 100%;
         }
@@ -23,13 +26,22 @@
         &--short {
             margin-bottom: 3.5rem;
         }
+        &--tall {
+            margin-bottom: 23rem;
+        }
     }
+
     &__section-heading {
         margin-bottom: 1.5rem;
     }
 
     &__separator {
         margin: 3rem 0;
+    }
+
+    &__subscribe-area {
+        max-width: 60rem;
+        margin: 0 auto;
     }
 }
 
@@ -51,6 +63,14 @@
 
         &__section {
             margin-bottom: 9.5rem;
+
+            &--tall {
+                margin-bottom: 17rem;
+            }
+        }
+
+        &__subscribe-area {
+            width: 90%;
         }
     }
 }
@@ -72,7 +92,6 @@
 
         &__section {
             margin-top: 3rem;
-            margin-bottom: 7rem;
 
             &--short {
                 margin-bottom: 3.5rem;
