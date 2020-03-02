@@ -8,6 +8,7 @@
     }
 
     &__container {
+        position: relative;
         max-width: 120rem;
         width: 90%;
         margin: 0 auto;
@@ -36,6 +37,24 @@
 
     &__section-heading {
         margin-bottom: 1.5rem;
+    }
+    &__section-sidetext {
+        @extend %uppercase;
+        position: absolute;
+        top: 0;
+        transform: rotate(-90deg);
+        font-weight: $font-weight__semibold--thin;
+        color: $color__text--lightest;
+        font-size: 1.2rem;
+        cursor: default;
+        user-select: none;
+
+        &--right {
+            right: -13.5rem;
+        }
+        &--left {
+            left: 0;
+        }
     }
 
     &__separator {
@@ -75,6 +94,9 @@
                 margin-bottom: 17rem;
             }
         }
+        &__section-sidetext {
+            display: none;
+        }
 
         &__subscribe-area {
             width: 90%;
@@ -106,4 +128,5 @@
         }
     }
 }
+
 
