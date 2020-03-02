@@ -3,7 +3,12 @@
 // ------------------------------------------------------------
 
 .page {
+    &__main {
+        margin-top: 4.5rem;
+    }
+
     &__container {
+        position: relative;
         max-width: 120rem;
         width: 90%;
         margin: 0 auto;
@@ -20,7 +25,6 @@
     }
 
     &__section {
-        margin-top: 4.5rem;
         margin-bottom: 13rem;
 
         &--short {
@@ -34,6 +38,24 @@
     &__section-heading {
         margin-bottom: 1.5rem;
     }
+    &__section-sidetext {
+        @extend %uppercase;
+        position: absolute;
+        top: 0;
+        transform: rotate(-90deg);
+        font-weight: $font-weight__semibold--thin;
+        color: $color__text--lightest;
+        font-size: 1.2rem;
+        cursor: default;
+        user-select: none;
+
+        &--right {
+            right: -13.5rem;
+        }
+        &--left {
+            left: 0;
+        }
+    }
 
     &__separator {
         margin: 3rem 0;
@@ -42,6 +64,10 @@
     &__subscribe-area {
         max-width: 60rem;
         margin: 0 auto;
+    }
+
+    &__footer {
+        margin-bottom: 6rem;
     }
 }
 
@@ -68,6 +94,9 @@
                 margin-bottom: 17rem;
             }
         }
+        &__section-sidetext {
+            display: none;
+        }
 
         &__subscribe-area {
             width: 90%;
@@ -78,7 +107,7 @@
 
 
 //
-// Mobile - Small
+// Mobile
 // ______________________________
 
 @media screen and (max-width: $media__s) {
@@ -99,4 +128,5 @@
         }
     }
 }
+
 

@@ -18,6 +18,13 @@
     box-sizing: border-box;
 }
 
+// Disable blue overlay on tap - mobile devices
+html {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
+    -moz-tap-highlight-color: rgba(255, 255, 255, 0); 
+    -ms-tap-highlight-color: rgba(255, 255, 255, 0); 
+}
+
 body {
     font: {
         family: $font-family__primary;
@@ -43,7 +50,18 @@ a {
     &:hover {
         color: $color__brand;
     }
+
+    @media screen and (max-width: $media__l) {
+        &:hover {
+            color: $color__link;
+        }
+        &:active {
+            color: $color__brand;
+        }
+    }
 }
+
+
 
 img {
     max-width: 100%;

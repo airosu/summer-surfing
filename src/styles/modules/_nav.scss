@@ -19,6 +19,21 @@
             margin-right: 0;
         }
     }
+
+    &--centered {
+        justify-content: center;
+    }
+
+    &--wide {
+        .site-nav {
+            &__item {
+                margin-right: 8.5rem;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
 }
 
 
@@ -39,6 +54,14 @@
 
         &__item {
             margin-right: unset;
+        }
+
+        &--wide {
+            .site-nav {
+                &__item {
+                    margin-right: unset;
+                }
+            }
         }
     }
 }
