@@ -14,6 +14,7 @@
         display: flex;
         align-items: center;
         width: 50%;
+        padding-right: 5rem;
     }
 
     &__body {
@@ -24,9 +25,96 @@
     &__title {
         font-family: $font-family__secondary;
         font-size: 3.1rem;
-        margin-bottom: 2rem;
+        margin-bottom: 5rem;
         text-transform: capitalize;
         padding-left: 10rem;
     }
+
+    &__tagline {
+        @extend %uppercase;
+        margin-bottom: 4rem;
+        font-weight: $font-weight__semibold--thin;
+        color: $color__text--lighter;
+        font-size: 1.2rem;
+    }
+
+    &__link {
+        @extend %uppercase;
+        font-size: 1.2rem;
+        border-bottom: 0.2rem solid $color__brand;
+
+        &:hover {
+            color: $color__brand--dark;
+        }
+    }
 }
 
+
+//
+// Tablet
+// ______________________________
+
+@media screen and (max-width: $media__l) {
+    
+    .footer-article {
+        display: block;
+
+        &__media {
+            width: 100%;
+            margin-bottom: 5rem;
+        }
+
+        &__body-container {
+            width: 100%;
+        }
+        &__body {
+            margin: 0 auto;
+        }
+
+        &__tagline {
+            margin-bottom: 1rem;
+        }
+        &__title {
+            margin-bottom: 3rem;
+        }
+    }
+}
+
+
+
+
+//
+// Mobile
+// ______________________________
+
+@media screen and (max-width: $media__s) {
+
+    .footer-article {
+        &__title {
+            font-size: 2.6rem;
+        }
+
+        &__tagline {
+            font-size: 1.1rem;
+        }
+
+        &__link {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+
+
+//
+// Mobile - xxs
+// ______________________________
+
+@media screen and (max-width: $media__xxs) {
+
+    .footer-article {
+        &__title {
+            padding-left: 4.5rem;
+        }
+    }
+}

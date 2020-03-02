@@ -12,8 +12,9 @@ $color__brand--dark: #1576d1;
 $color__board-background: #ededed;
 
 
-$color__text--light: #757575;
-$color__text: #333;
+$color__text--lighter:  #bfbfbf;
+$color__text--light:    #757575;
+$color__text:           #333;
 
 
 $color__link: #0b0c11;
@@ -50,8 +51,9 @@ $font-weight__boldest:          900;
 
 // --- media ---
 
-$media__xs: 480px;
-$media__s:  576px;
-$media__m:  768px;
-$media__l:  992px;
+$media__xxs: 320px;
+$media__xs:  480px;
+$media__s:   576px;
+$media__m:   768px;
+$media__l:   992px;
 

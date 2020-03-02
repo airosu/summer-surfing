@@ -38,3 +38,22 @@
         }
     }
 }
+
+
+
+//
+// Mobile
+// ______________________________
+
+@media screen and (max-width: $media__s) {
+
+    .quote {
+        &__text {
+            font-size: 1.6rem;
+        }
+        &__name {
+            font-size: 1.1rem;
+        }
+    }
+}
+

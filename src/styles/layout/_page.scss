@@ -3,6 +3,10 @@
 // ------------------------------------------------------------
 
 .page {
+    &__main {
+        margin-top: 4.5rem;
+    }
+
     &__container {
         max-width: 120rem;
         width: 90%;
@@ -20,7 +24,6 @@
     }
 
     &__section {
-        margin-top: 4.5rem;
         margin-bottom: 13rem;
 
         &--short {
@@ -42,6 +45,10 @@
     &__subscribe-area {
         max-width: 60rem;
         margin: 0 auto;
+    }
+
+    &__footer {
+        margin-bottom: 6rem;
     }
 }
 
@@ -78,7 +85,7 @@
 
 
 //
-// Mobile - Small
+// Mobile
 // ______________________________
 
 @media screen and (max-width: $media__s) {

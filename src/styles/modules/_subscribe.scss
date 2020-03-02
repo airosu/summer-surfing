@@ -23,6 +23,10 @@
             @extend %uppercase;
             font-size: 0.9rem;
         }
+
+        &:focus {
+            outline: 0.2rem solid $color__brand;
+        }
     }
 
     &__button {
