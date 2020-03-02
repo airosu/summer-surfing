@@ -19,19 +19,19 @@
                 <div class="header__logo">
                     <i class="logo icon-surf"></i>
                 </div>
-                <nav class="header__nav site-nav">
+                <nav class="header__nav site-nav" data-role="navigation">
                     <ul class="site-nav__list">
                         <li class="site-nav__item">
-                            <a class="site-nav__link" href="#">Events</a>
+                            <a class="site-nav__link" href="#" data-target="events" data-offset="-32">Events</a>
                         </li>
                         <li class="site-nav__item">
-                            <a class="site-nav__link" href="#">Boards</a>
+                            <a class="site-nav__link" href="#" data-target="boards" data-offset="-37">Boards</a>
                         </li>
                         <li class="site-nav__item">
-                            <a class="site-nav__link" href="#">Stories</a>
+                            <a class="site-nav__link" href="#" data-target="stories" data-offset="-40">Stories</a>
                         </li>
                         <li class="site-nav__item">
-                            <a class="site-nav__link" href="#">Camp</a>
+                            <a class="site-nav__link" href="#" data-target="contact" data-offset="-90">Camp</a>
                         </li>
                     </ul>
                 </nav>
@@ -52,7 +52,9 @@
                                 <div class="info-block">
                                     <div class="info-block__subtitle">Your</div>
                                     <h1 class="info-block__title info-block__title--underline">Summer Escape</h1>
-                                    <p class="info-block__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam reprehenderit corporis blanditiis cum consectetur illo?</p>
+                                    <p class="info-block__description">
+                                        One of the greatest aspects of the sport of surfing is that you only need three things: your body, a surfbord and a wave.
+                                    </p>
                                     <div class="info-block__action">
                                         <a href="#" class="info-block__link">Read more</a>
                                     </div>
@@ -63,7 +65,7 @@
                             <img class="hero__image" src="./images/hero.jpg" alt="Your Summer Escape">
                         </div>
                     </div>
-                    <div class="page__section-sidetext page__section-sidetext--right">
+                    <div class="page__section-sidetext page__section-sidetext--hero-right">
                         First surfing magazine
                     </div>
                 </div>
@@ -88,14 +90,16 @@
 
 
             <!-- Showcase -->
-            <section class="page__section">
+            <section class="page__section" data-location="events">
                 <div class="page__container">
                     <div class="showcase">
                         <div class="showcase__block showcase__block--small">
                             <img class="showcase__image" src="./images/img2.jpg" alt="">
                             <div class="showcase__body">
                                 <div class="info-block">
-                                    <p class="info-block__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam reprehenderit corporis blanditiis cum consectetur illo?</p>
+                                    <p class="info-block__description">
+                                        Want to catch a wave away from the crowds? From jungle-flanked point breaks in Colombia to secluded New Zealand coves, a global array of lesser-known surfing destinations are waiting to be discovered.
+                                    </p>
                                     <div class="info-block__action">
                                         <a href="#" class="info-block__link">Read more</a>
                                     </div>
@@ -111,7 +115,7 @@
 
 
             <!-- Boards Carousel -->
-            <section class="page__section page__section--tall">
+            <section class="page__section page__section--tall" data-location="boards">
                 <div class="page__container page__container--large page__container--full-width">
                     <div class="page__section-heading">
                         <div class="info-block info-block--centered">
@@ -240,14 +244,16 @@
 
 
             <!-- Article 1 -->
-            <section class="page__section">
+            <section class="page__section" data-location="stories">
                 <div class="page__container">
                     <article class="article">
                         <div class="article__body article__body--left">
                             <div class="info-block">
                                 <span class="info-block__background-number info-block__background-number--right">01</span>
-                                <h1 class="info-block__title info-block__title--underline">Summer Escape</h1>
-                                <p class="info-block__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam reprehenderit corporis blanditiis cum consectetur illo?</p>
+                                <h1 class="info-block__title info-block__title--underline">Surf Training</h1>
+                                <p class="info-block__description">
+                                    By better understanding the various aspects of surfing, you will improve faster and have more fun in the water.
+                                </p>
                                 <div class="info-block__action">
                                     <a href="#" class="info-block__link">Read more</a>
                                 </div>
@@ -257,6 +263,9 @@
                             <img class="article__image" src="./images/img3.jpg" alt="">
                         </div>
                     </article>
+                    <div class="page__section-sidetext page__section-sidetext--article-right">
+                        Surf Camps
+                    </div>
                 </div>
             </section> <!-- Article 1 -END- -->
 
@@ -270,12 +279,17 @@
                         <div class="article__body article__body--right">
                             <div class="info-block">
                                 <span class="info-block__background-number info-block__background-number--left">02</span>
-                                <h1 class="info-block__title info-block__title--underline">Summer Escape</h1>
-                                <p class="info-block__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam reprehenderit corporis blanditiis cum consectetur illo?</p>
+                                <h1 class="info-block__title info-block__title--underline">Point break</h1>
+                                <p class="info-block__description">
+                                    Point breaks can be very reliable under the right conditions, as the headland or point that contributes to the waves is fixed.
+                                </p>
                                 <div class="info-block__action">
                                     <a href="#" class="info-block__link">Read more</a>
                                 </div>
                             </div>
+                        </div>
+                        <div class="page__section-sidetext page__section-sidetext--article-left">
+                            Surf Camps
                         </div>
                     </article>
                 </div>
@@ -283,7 +297,7 @@
 
 
             <!-- Subscribe Area -->
-            <section class="page__section">
+            <section class="page__section" data-location="contact">
                 <div class="page__subscribe-area">
                     <div class="separator page__separator">
                         <div class="separator__line"></div>
@@ -291,8 +305,10 @@
                     <div class="subscribe">
                         <div class="subscribe__body">
                             <div class="info-block">
-                                <h1 class="info-block__title">Summer Escape</h1>
-                                <p class="info-block__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam reprehenderit corporis blanditiis cum consectetur illo?</p>
+                                <h1 class="info-block__title">Join the Club</h1>
+                                <p class="info-block__description">
+                                    Be kept up to date with all upcoming events, news, parties, boards stock updates or any new hot spots we may come across.
+                                </p>
                             </div>
                         </div>
                         <form class="subscribe__form" action="#">
@@ -318,8 +334,8 @@
                         <div class="footer-article__body">
                             <p class="footer-article__tagline">Our camp</p>
                             <p class="footer-article__title">18 Fletcher St, Byron Bay NSW 2481, Australia</p>
-                            <div class="footer-article__action">
-                                <a class="footer-article__link" href="#">Get in touch</a>
+                            <div class="footer-article__action" data-role="navigation">
+                                <a class="footer-article__link" href="#" data-target="contact" data-offset="-90">Get in touch</a>
                             </div>
                         </div>
                     </div>
@@ -338,19 +354,19 @@
                 <div class="footer__logo">
                     <i class="logo icon-surf"></i>
                 </div>
-                <nav class="footer__nav site-nav site-nav--centered site-nav--wide">
+                <nav class="footer__nav site-nav site-nav--centered site-nav--wide" data-role="navigation">
                     <ul class="site-nav__list">
                         <li class="site-nav__item">
-                            <a class="site-nav__link" href="#">Events</a>
+                            <a class="site-nav__link" href="#" data-target="events" data-offset="-32">Events</a>
                         </li>
                         <li class="site-nav__item">
-                            <a class="site-nav__link" href="#">Boards</a>
+                            <a class="site-nav__link" href="#" data-target="boards" data-offset="-37">Boards</a>
                         </li>
                         <li class="site-nav__item">
-                            <a class="site-nav__link" href="#">Stories</a>
+                            <a class="site-nav__link" href="#" data-target="stories" data-offset="-40">Stories</a>
                         </li>
                         <li class="site-nav__item">
-                            <a class="site-nav__link" href="#">Camp</a>
+                            <a class="site-nav__link" href="#" data-target="contact" data-offset="-90">Camp</a>
                         </li>
                     </ul>
                 </nav>

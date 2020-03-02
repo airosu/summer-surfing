@@ -49,11 +49,19 @@
         cursor: default;
         user-select: none;
 
-        &--right {
-            right: -13.5rem;
+        &--hero-right {
+            right: -13.7rem;
         }
-        &--left {
+        &--hero-left {
             left: 0;
+        }
+        &--article-right {
+            right: -8rem;
+            top: 4rem;
+        }
+        &--article-left {
+            left: -8rem;
+            top: 4rem;
         }
     }
 
