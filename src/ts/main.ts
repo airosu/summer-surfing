@@ -4,11 +4,12 @@
 
 
 
+// Smooth scroll to anchors
 function scrollToAnchor( target:string, offset:any=0 ) {
     const distanceToTop = ( el:HTMLElement ) => Math.floor(el.getBoundingClientRect().top);
     const targetAnchor = document.querySelector( target );
     if ( !targetAnchor ) return;
-    if ( offset === null ) {
+    if ( !offset ) {
         offset = 0;
     }
     const originalTop = distanceToTop(targetAnchor as HTMLElement) + parseInt(offset);
@@ -18,7 +19,7 @@ function scrollToAnchor( target:string, offset:any=0 ) {
 
 
 
-
+// navigation event listeners
 function addNavigationListeners() {
     const navigations = document.querySelectorAll( '[data-role="navigation"]' );
 
@@ -33,12 +34,63 @@ function addNavigationListeners() {
 
             if ( !!targetValue ) {
                 const offset = targetOffset ? targetOffset : 0;
-                console.log(offset);
                 scrollToAnchor( targetLocation, offset );
             }
         } );
     } );
 }
+
+
+// "Learn More" ctas event listeners
+function addLearnMoreListeners() {
+    const ctas = document.querySelectorAll( '[data-js="readMore"]' );
+
+    ctas.forEach( (cta) => {
+        cta.addEventListener( 'click', (event) => {
+            event.preventDefault();
+
+            const body = document.querySelector( 'body' );
+            const eventTarget = event.target as HTMLElement;
+            const targetValue = eventTarget.getAttribute( 'data-target' );
+            const modal:HTMLElement|null = document.querySelector( `[data-modal="${targetValue}"]` );
+            if (!modal) return;
+
+            if (body) body.classList.add( 'modal-open' );
+            modal.removeAttribute( 'hidden' );
+        } );
+    } );
+}
+
+
+function closeModal( element:Element|HTMLElement ) {
+    element.addEventListener( 'click', (event) => {
+        event.preventDefault();
+
+        const body = document.querySelector( 'body' );
+        const eventTarget = event.target as HTMLElement;
+        const modalParent = eventTarget.closest( '[data-modal]' );
+        if (!modalParent) return;
+
+        if (body) body.classList.remove( 'modal-open' );
+        modalParent.setAttribute( 'hidden', 'true' );
+    } );
+};
+
+// Listener for modal close buttons
+function closeModalListener() {
+    const closeButtons = document.querySelectorAll( '[data-action="close"]' );
+    const overlays = document.querySelectorAll( '[data-js="modalOverlay"]' );
+
+    closeButtons.forEach( (button) => closeModal(button) );
+    overlays.forEach( (overlay) => closeModal(overlay) );
+}
+
+
+
+
+
+
+
 
 
 
@@ -47,5 +99,7 @@ function addNavigationListeners() {
 
 document.addEventListener( 'DOMContentLoaded', () => {
     addNavigationListeners();
+    addLearnMoreListeners();
+    closeModalListener()
 } );
 
