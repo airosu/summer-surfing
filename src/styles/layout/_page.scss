@@ -33,6 +33,9 @@
         &--tall {
             margin-bottom: 23rem;
         }
+        &--relative {
+            position: relative;
+        }
     }
 
     &__section-heading {
@@ -63,6 +66,20 @@
             left: -8rem;
             top: 4rem;
         }
+    }
+
+    &__shadow-image {
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    &__anchor {
+        display: inline-block;
+        width: 0rem;
+        height: 0rem;
     }
 
     &__separator {
