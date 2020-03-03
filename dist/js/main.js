@@ -1,32 +1,19 @@
 "use strict";
 // ------------------------------------------------------------
-// Scroll to anchor
+// Event Listeners
 // ------------------------------------------------------------
-// Smooth scroll to anchors
-function scrollToAnchor(target, offset) {
-    if (offset === void 0) { offset = 0; }
-    var distanceToTop = function (el) { return Math.floor(el.getBoundingClientRect().top); };
-    var targetAnchor = document.querySelector(target);
-    if (!targetAnchor)
-        return;
-    if (!offset) {
-        offset = 0;
-    }
-    var originalTop = distanceToTop(targetAnchor) + parseInt(offset);
-    window.scrollBy({ top: originalTop, left: 0, behavior: 'smooth' });
-}
-// navigation event listeners
+// Navigation event listeners
 function addNavigationListeners() {
-    var navigations = document.querySelectorAll('[data-role="navigation"]');
-    navigations.forEach(function (nav) {
-        nav.addEventListener('click', function (event) {
+    const navigations = document.querySelectorAll('[data-role="navigation"]');
+    navigations.forEach((nav) => {
+        nav.addEventListener('click', (event) => {
             event.preventDefault();
-            var eventTarget = event.target;
-            var targetValue = eventTarget.getAttribute('data-target');
-            var targetOffset = eventTarget.getAttribute('data-offset');
-            var targetLocation = "[data-location=\"" + targetValue + "\"]";
+            const eventTarget = event.target;
+            const targetValue = eventTarget.getAttribute('data-target');
+            const targetOffset = eventTarget.getAttribute('data-offset');
+            const targetLocation = `[data-location="${targetValue}"]`;
             if (!!targetValue) {
-                var offset = targetOffset ? targetOffset : 0;
+                const offset = targetOffset ? targetOffset : 0;
                 scrollToAnchor(targetLocation, offset);
             }
         });
@@ -34,14 +21,14 @@ function addNavigationListeners() {
 }
 // "Learn More" ctas event listeners
 function addLearnMoreListeners() {
-    var ctas = document.querySelectorAll('[data-js="readMore"]');
-    ctas.forEach(function (cta) {
-        cta.addEventListener('click', function (event) {
+    const ctas = document.querySelectorAll('[data-js="readMore"]');
+    ctas.forEach((cta) => {
+        cta.addEventListener('click', (event) => {
             event.preventDefault();
-            var body = document.querySelector('body');
-            var eventTarget = event.target;
-            var targetValue = eventTarget.getAttribute('data-target');
-            var modal = document.querySelector("[data-modal=\"" + targetValue + "\"]");
+            const body = document.querySelector('body');
+            const eventTarget = event.target;
+            const targetValue = eventTarget.getAttribute('data-target');
+            const modal = document.querySelector(`[data-modal="${targetValue}"]`);
             if (!modal)
                 return;
             if (body)
@@ -50,12 +37,13 @@ function addLearnMoreListeners() {
         });
     });
 }
+// Modal close buttons listeners
 function closeModal(element) {
-    element.addEventListener('click', function (event) {
+    element.addEventListener('click', (event) => {
         event.preventDefault();
-        var body = document.querySelector('body');
-        var eventTarget = event.target;
-        var modalParent = eventTarget.closest('[data-modal]');
+        const body = document.querySelector('body');
+        const eventTarget = event.target;
+        const modalParent = eventTarget.closest('[data-modal]');
         if (!modalParent)
             return;
         if (body)
@@ -66,13 +54,69 @@ function closeModal(element) {
 ;
 // Listener for modal close buttons
 function closeModalListener() {
-    var closeButtons = document.querySelectorAll('[data-action="close"]');
-    var overlays = document.querySelectorAll('[data-js="modalOverlay"]');
-    closeButtons.forEach(function (button) { return closeModal(button); });
-    overlays.forEach(function (overlay) { return closeModal(overlay); });
+    const closeButtons = document.querySelectorAll('[data-action="close"]');
+    const overlays = document.querySelectorAll('[data-js="modalOverlay"]');
+    closeButtons.forEach((button) => closeModal(button));
+    overlays.forEach((overlay) => closeModal(overlay));
 }
-// Initialize event listeners
-document.addEventListener('DOMContentLoaded', function () {
+// ------------------------------------------------------------
+// Modal Controllers
+// ------------------------------------------------------------
+function generateModal(name) {
+    const template = `
+        <div class="modal__container">
+            <div class="modal__action modal__action--right">
+                <a class="modal__close-button" href="#" data-action="close"><i class="fas fa-times"></i></a>
+            </div>
+            <div class="info-block__subtitle info-block__subtitle--centered">Your</div>
+            <h2 class="modal__title info-block__title info-block__title--underline">
+                <span class="info-block__title-span">Summer Escape</span>
+            </h2>
+            <div class="modal__body info-block__description">
+                <p class="modal__paragraph info-block__paragraph"></p>
+                <div class="modal__action modal__action--left">
+                    <div class="info-block__action info-block__action">
+                        <a href="#" class="info-block__link" data-action="close">Return</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal__overlay" data-js="modalOverlay"></div>
+    `;
+    const container = document.querySelector('[data-js="modals"]');
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.setAttribute('data-modal', name);
+    modal.setAttribute('hidden', 'true');
+    modal.innerHTML = template;
+    if (container)
+        container.appendChild(modal);
+}
+// ------------------------------------------------------------
+// Utils
+// ------------------------------------------------------------
+// Smooth scroll to anchors
+function scrollToAnchor(target, offset = 0) {
+    const distanceToTop = (el) => Math.floor(el.getBoundingClientRect().top);
+    const targetAnchor = document.querySelector(target);
+    if (!targetAnchor)
+        return;
+    if (!offset) {
+        offset = 0;
+    }
+    const originalTop = distanceToTop(targetAnchor) + parseInt(offset);
+    window.scrollBy({ top: originalTop, left: 0, behavior: 'smooth' });
+}
+// ------------------------------------------------------------
+// Initialize
+// ------------------------------------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+    // Generate modals
+    generateModal('hero');
+    generateModal('events');
+    generateModal('training');
+    generateModal('point');
+    // Add event listeners
     addNavigationListeners();
     addLearnMoreListeners();
     closeModalListener();

@@ -1,25 +1,10 @@
 // ------------------------------------------------------------
-// Scroll to anchor
+// Event Listeners
 // ------------------------------------------------------------
 
 
 
-// Smooth scroll to anchors
-function scrollToAnchor( target:string, offset:any=0 ) {
-    const distanceToTop = ( el:HTMLElement ) => Math.floor(el.getBoundingClientRect().top);
-    const targetAnchor = document.querySelector( target );
-    if ( !targetAnchor ) return;
-    if ( !offset ) {
-        offset = 0;
-    }
-    const originalTop = distanceToTop(targetAnchor as HTMLElement) + parseInt(offset);
-
-    window.scrollBy( { top: originalTop, left: 0, behavior: 'smooth' } );
-}
-
-
-
-// navigation event listeners
+// Navigation event listeners
 function addNavigationListeners() {
     const navigations = document.querySelectorAll( '[data-role="navigation"]' );
 
@@ -61,7 +46,7 @@ function addLearnMoreListeners() {
     } );
 }
 
-
+// Modal close buttons listeners
 function closeModal( element:Element|HTMLElement ) {
     element.addEventListener( 'click', (event) => {
         event.preventDefault();
@@ -89,15 +74,79 @@ function closeModalListener() {
 
 
 
+// ------------------------------------------------------------
+// Modal Controllers
+// ------------------------------------------------------------
+
+
+
+function generateModal( name:string ) {
+    const template = `
+        <div class="modal__container">
+            <div class="modal__action modal__action--right">
+                <a class="modal__close-button" href="#" data-action="close"><i class="fas fa-times"></i></a>
+            </div>
+            <div class="info-block__subtitle info-block__subtitle--centered">Your</div>
+            <h2 class="modal__title info-block__title info-block__title--underline">
+                <span class="info-block__title-span">Summer Escape</span>
+            </h2>
+            <div class="modal__body info-block__description">
+                <p class="modal__paragraph info-block__paragraph"></p>
+                <div class="modal__action modal__action--left">
+                    <div class="info-block__action info-block__action">
+                        <a href="#" class="info-block__link" data-action="close">Return</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal__overlay" data-js="modalOverlay"></div>
+    `;
+    const container = document.querySelector( '[data-js="modals"]' );
+    const modal = document.createElement( 'div' );
+
+    modal.className = 'modal';
+    modal.setAttribute( 'data-modal', name );
+    modal.setAttribute( 'hidden', 'true' );
+    modal.innerHTML = template;
+    if (container) container.appendChild( modal );
+}
+
+
+
+// ------------------------------------------------------------
+// Utils
+// ------------------------------------------------------------
+
+// Smooth scroll to anchors
+function scrollToAnchor( target:string, offset:any=0 ) {
+    const distanceToTop = ( el:HTMLElement ) => Math.floor(el.getBoundingClientRect().top);
+    const targetAnchor = document.querySelector( target );
+    if ( !targetAnchor ) return;
+    if ( !offset ) {
+        offset = 0;
+    }
+    const originalTop = distanceToTop(targetAnchor as HTMLElement) + parseInt(offset);
+
+    window.scrollBy( { top: originalTop, left: 0, behavior: 'smooth' } );
+}
 
 
 
 
 
-
-// Initialize event listeners
+// ------------------------------------------------------------
+// Initialize
+// ------------------------------------------------------------
 
 document.addEventListener( 'DOMContentLoaded', () => {
+
+    // Generate modals
+    generateModal('hero');
+    generateModal('events');
+    generateModal('training');
+    generateModal('point');
+
+    // Add event listeners
     addNavigationListeners();
     addLearnMoreListeners();
     closeModalListener()

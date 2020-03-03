@@ -87,3 +87,50 @@
 }
 
 
+
+
+
+//
+// Tablet
+// ______________________________
+
+@media screen and (max-width: $media__l) {
+
+    .modal {
+        &__container {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    }
+}
+
+
+
+
+//
+// Mobile
+// ______________________________
+
+@media screen and (max-width: $media__s) {
+    
+    .modal {
+        &__close-button {
+            font-size: 1.8rem;
+        }
+
+        &__title {
+            margin-bottom: 7rem;
+        }
+
+        &__body {
+            padding: 0 3rem;
+        }
+
+        &__paragraph {
+            font-size: 1.4rem;
+        }
+    }
+}
+
