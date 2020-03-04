@@ -64,6 +64,14 @@
         font-size: 1.3rem;
         padding-top: 1.2rem;
     }
+
+    &__shadow {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -56rem;
+        z-index: -1;
+    }
 }
 
 
