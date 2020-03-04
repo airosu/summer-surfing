@@ -1,5 +1,5 @@
 // ------------------------------------------------------------
-// Footer Article
+// Footer Article Block
 // ------------------------------------------------------------
 
 
@@ -33,7 +33,7 @@
     &__tagline {
         @extend %uppercase;
         margin-bottom: 4rem;
-        font-weight: $font-weight__semibold--thin;
+        font-weight: $font-weight__semibold--light;
         color: $color__text--lighter;
         font-size: 1.2rem;
     }

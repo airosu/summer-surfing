@@ -22,7 +22,7 @@
                 <nav class="header__nav site-nav" data-role="navigation">
                     <ul class="site-nav__list">
                         <li class="site-nav__item">
-                            <a class="site-nav__link" href="#" data-target="events" data-offset="-32">Events</a>
+                            <a class="site-nav__link" href="#" data-target="locations" data-offset="-32">Locations</a>
                         </li>
                         <li class="site-nav__item">
                             <a class="site-nav__link" href="#" data-target="boards" data-offset="-37">Boards</a>
@@ -93,7 +93,7 @@
 
             <!-- Showcase -->
             <section class="page__section">
-                <div class="page__anchor" data-location="events"></div>
+                <div class="page__anchor" data-location="locations"></div>
                 <div class="page__container">
                     <div class="showcase">
                         <div class="showcase__block showcase__block--small">
@@ -104,7 +104,7 @@
                                         Want to catch a wave away from the crowds? From jungle-flanked point breaks in Colombia to secluded New Zealand coves, a global array of lesser-known surfing destinations are waiting to be discovered.
                                     </p>
                                     <div class="info-block__action">
-                                        <a href="#" class="info-block__link" data-js="readMore" data-target="events">Read more</a>
+                                        <a href="#" class="info-block__link" data-js="readMore" data-target="locations">Read more</a>
                                     </div>
                                 </div>
                             </div>
@@ -118,7 +118,7 @@
 
 
             <!-- Boards Carousel -->
-            <section class="page__section page__section--tall">
+            <section class="page__section page__section--tall page__section--relative">
                 <div class="page__anchor" data-location="boards"></div>
                 <div class="page__container page__container--large page__container--full-width">
                     <div class="page__section-heading">
@@ -243,6 +243,7 @@
                         </div>
                     </div>
                 </div>
+                <img class="carousel__shadow" src="./images/shadow1.png" alt="">
             </section> <!-- Boards Carousel -END- -->
 
 
@@ -317,16 +318,20 @@
                                 </p>
                             </div>
                         </div>
-                        <form class="subscribe__form" action="#">
-                            <input class="subscribe__input" type="text" placeholder="Your e-mail">
+                        <form class="subscribe__form" action="#" data-subscribe="form">
+                            <input class="subscribe__input" type="text" placeholder="Your e-mail" data-subscribe="input">
                             <button class="subscribe__button">
                                 <svg class="subscribe__arrow" viewBox="0 0 100 100">
                                     <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path>
                                 </svg>
                             </button>
+                            <div class="subscribe__message">
+                                <span class="subscribe__error" data-subscribe="error"></span>
+                            </div>
                         </form>
                     </div>
                 </div>
+                <img class="subscribe__shadow" src="./images/shadow2.png" alt="">
             </section> <!-- Subscribe Area -END- -->
 
 
@@ -349,7 +354,6 @@
             </section> <!-- Our Camp -END- -->
 
 
-
         </main> <!-- Main -END- -->
 
 
@@ -363,7 +367,7 @@
                 <nav class="footer__nav site-nav site-nav--centered site-nav--wide" data-role="navigation">
                     <ul class="site-nav__list">
                         <li class="site-nav__item">
-                            <a class="site-nav__link" href="#" data-target="events" data-offset="-32">Events</a>
+                            <a class="site-nav__link" href="#" data-target="locations" data-offset="-32">Locations</a>
                         </li>
                         <li class="site-nav__item">
                             <a class="site-nav__link" href="#" data-target="boards" data-offset="-37">Boards</a>

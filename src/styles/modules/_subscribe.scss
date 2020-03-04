@@ -1,5 +1,5 @@
 // ------------------------------------------------------------
-// Subscribe
+// Subscribe Block
 // ------------------------------------------------------------
 
 
@@ -10,6 +10,20 @@
     }
     &__form {
         position: relative;
+
+        &--error {
+            .subscribe {
+                &__input {
+                    &:focus {
+                        outline: none;
+                        box-shadow: 0 0 0.5rem 0.2rem $color__red--dark;
+                    }
+                }
+                &__button {
+                    background-color: $color__red--dark;
+                }
+            }
+        }
     }
 
     &__input {
@@ -42,6 +56,21 @@
     }
     &__arrow {
         fill: $color__white;
+    }
+
+    &__message {
+        min-height: 3.4rem;
+        color: $color__red--dark;
+        font-size: 1.3rem;
+        padding-top: 1.2rem;
+    }
+
+    &__shadow {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -56rem;
+        z-index: -1;
     }
 }
 

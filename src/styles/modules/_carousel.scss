@@ -9,10 +9,18 @@
 
     &__cell {
         width: calc(100% / 3);
-        max-height: 400px;
-        margin-right: 10px;
-        border-radius: 5px;
+        max-height: 40rem;
+        margin-right: 1rem;
+        border-radius: 0.5rem;
         counter-increment: gallery-cell;
+    }
+
+    &__shadow {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -10rem;
+        z-index: -1;
     }
 }
 
@@ -20,15 +28,15 @@
 
 .flickity-prev-next-button {
     top: 67%;
-    width: 30px;
-    height: 30px;
-    border-radius: 5px;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.5rem;
 
     &.previous {
-        left: -40px;
+        left: -4rem;
     }
     &.next {
-        right: -40px;
+        right: -4rem;
     }
     &.no-svg {
         color: white;
@@ -41,6 +49,11 @@
 
 .flickity-button {
     color: $color__text--light;
+    background: none;
+
+    &:hover {
+        background: none;
+    }
 }
 
 .flickity-page-dots {

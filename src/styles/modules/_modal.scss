@@ -15,7 +15,7 @@
     /* Scrollbar width */
     ::-webkit-scrollbar {
         width: 0.7rem;
-        padding: 20px 0;
+        padding: 2rem 0;
     }
   
     /* Scrollbar Track */
@@ -26,7 +26,7 @@
     /* Handle */
     ::-webkit-scrollbar-thumb {
         background: rgba(237,237,237,1);
-        border-radius: 10px;
+        border-radius: 1rem;
     }
 
     /* Handle on hover */
@@ -69,7 +69,7 @@
         top: 10%;
         right: 10%;
         left: 10%;
-        bottom: 5%;
+        bottom: 10%;
         z-index: 1;
         padding: 2.4rem 0 4rem 0.7rem;
         background-color: $color__white;

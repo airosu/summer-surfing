@@ -33,7 +33,7 @@ function addLearnMoreListeners() {
                 return;
             if (body)
                 body.classList.add('modal-open');
-            modal.removeAttribute('hidden');
+            modal.hidden = false;
         });
     });
 }
@@ -48,7 +48,7 @@ function closeModal(element) {
             return;
         if (body)
             body.classList.remove('modal-open');
-        modalParent.setAttribute('hidden', 'true');
+        modalParent.hidden = true;
     });
 }
 ;
@@ -59,38 +59,89 @@ function closeModalListener() {
     closeButtons.forEach((button) => closeModal(button));
     overlays.forEach((overlay) => closeModal(overlay));
 }
-// ------------------------------------------------------------
-// Modal Controllers
-// ------------------------------------------------------------
-function generateModal(name) {
-    const template = `
-        <div class="modal__container">
-            <div class="modal__action modal__action--right">
-                <a class="modal__close-button" href="#" data-action="close"><i class="fas fa-times"></i></a>
-            </div>
-            <div class="info-block__subtitle info-block__subtitle--centered">Your</div>
-            <h2 class="modal__title info-block__title info-block__title--underline">
-                <span class="info-block__title-span">Summer Escape</span>
-            </h2>
-            <div class="modal__body info-block__description">
-                <p class="modal__paragraph info-block__paragraph"></p>
-                <div class="modal__action modal__action--left">
-                    <div class="info-block__action info-block__action">
-                        <a href="#" class="info-block__link" data-action="close">Return</a>
+function generateModal(name, tag) {
+    getData().then((data) => {
+        const article = data.find((article) => article.name === name);
+        const template = `
+            <div class="modal__container">
+                <div class="modal__action modal__action--right">
+                    <a class="modal__close-button" href="#" data-action="close"><i class="fas fa-times"></i></a>
+                </div>
+                <div class="info-block__subtitle info-block__subtitle--centered">${tag}</div>
+                <h2 class="modal__title info-block__title info-block__title--underline">
+                    <span class="info-block__title-span">${article.title}</span>
+                </h2>
+                <div class="modal__body info-block__description">
+                    <div class="modal__paragraph-container" data-js="paragraphs"></div>
+                    <div class="modal__action modal__action--left">
+                        <div class="info-block__action info-block__action">
+                            <a href="#" class="info-block__link" data-action="close">Return</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="modal__overlay" data-js="modalOverlay"></div>
-    `;
-    const container = document.querySelector('[data-js="modals"]');
-    const modal = document.createElement('div');
-    modal.className = 'modal';
-    modal.setAttribute('data-modal', name);
-    modal.setAttribute('hidden', 'true');
-    modal.innerHTML = template;
-    if (container)
-        container.appendChild(modal);
+            <div class="modal__overlay" data-js="modalOverlay"></div>
+        `;
+        const container = document.querySelector('[data-js="modals"]');
+        const modal = document.createElement('div');
+        modal.className = 'modal';
+        modal.setAttribute('data-modal', name);
+        modal.hidden = true;
+        modal.innerHTML = template;
+        const paragraphContainer = modal.querySelector('[data-js="paragraphs"]');
+        article.paragraphs.forEach((paragraph) => {
+            const p = document.createElement('p');
+            p.className = 'modal__paragraph info-block__paragraph';
+            p.innerHTML = paragraph;
+            if (!paragraphContainer)
+                return;
+            paragraphContainer.appendChild(p);
+        });
+        if (container)
+            container.appendChild(modal);
+        closeModalListener();
+    });
+}
+async function getData() {
+    try {
+        const response = await fetch('../../articles.json');
+        const data = await response.json();
+        return data;
+    }
+    catch (err) {
+        console.error('Something went wrong! ' + err);
+    }
+}
+// ------------------------------------------------------------
+// Subscribe Form
+// ------------------------------------------------------------
+function addFormListeners() {
+    const regEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const form = document.querySelector('[data-subscribe="form"]');
+    const input = form.querySelector('[data-subscribe="input"]');
+    const error = form.querySelector('[data-subscribe="error"]');
+    if (!form)
+        return;
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (regEx.test(String(input.value).toLowerCase()) === false) {
+            if (input.value == '') {
+                if (error)
+                    error.innerText = 'This field is required.';
+                form.classList.add('subscribe__form--error');
+            }
+            else {
+                error.innerText = 'Please enter a valid email address.';
+                form.classList.add('subscribe__form--error');
+            }
+        }
+        else {
+            input.blur();
+            input.value = '';
+            error.innerText = '';
+            form.classList.remove('subscribe__form--error');
+        }
+    });
 }
 // ------------------------------------------------------------
 // Utils
@@ -112,12 +163,12 @@ function scrollToAnchor(target, offset = 0) {
 // ------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
     // Generate modals
-    generateModal('hero');
-    generateModal('events');
-    generateModal('training');
-    generateModal('point');
+    generateModal('hero', 'Your');
+    generateModal('locations', 'Find');
+    generateModal('training', 'Get');
+    generateModal('point', 'Info');
     // Add event listeners
     addNavigationListeners();
     addLearnMoreListeners();
-    closeModalListener();
+    addFormListeners();
 });
