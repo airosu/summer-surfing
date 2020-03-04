@@ -11,16 +11,19 @@ $color__brand--dark: #1576d1;
 
 $color__board-background: #ededed;
 
-
 $color__text--lightest: #d9d9d9;
 $color__text--lighter:  #bfbfbf;
 $color__text--light:    #757575;
 $color__text:           #333;
 
-
 $color__link: #0b0c11;
 
 
+
+// ---
+
+$color__black: #000;
+$color__white: #fff;
 
 $color__purple--light: #CE60A8;
 $color__purple: #930053;
@@ -29,8 +32,7 @@ $color__red--dark: #932020;
 
 $color__grey--light: #ededed;
 
-$color__black: #000;
-$color__white: #fff;
+
 
 
 // --- typography ---
@@ -43,8 +45,8 @@ $font-weight__lightest:         100;
 $font-weight__lighter:          200;
 $font-weight__light:            300;
 $font-weight__normal:           400;
-$font-weight__semibold--thin:   500;
-$font-weight__semibold--thick:  600;
+$font-weight__semibold--light:  500;
+$font-weight__semibold--heavy:  600;
 $font-weight__bold:             700;
 $font-weight__bolder:           800;
 $font-weight__boldest:          900;
