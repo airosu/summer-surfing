@@ -15,7 +15,7 @@
     /* Scrollbar width */
     ::-webkit-scrollbar {
         width: 0.7rem;
-        padding: 20px 0;
+        padding: 2rem 0;
     }
   
     /* Scrollbar Track */
@@ -26,7 +26,7 @@
     /* Handle */
     ::-webkit-scrollbar-thumb {
         background: rgba(237,237,237,1);
-        border-radius: 10px;
+        border-radius: 1rem;
     }
 
     /* Handle on hover */
