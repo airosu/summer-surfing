@@ -88,49 +88,51 @@ interface Article {
 
 
 function generateModal( name:string, tag:string ) {
-    getData().then( (data) => {
-        const article:Article = data.find( (article:Article) => article.name === name );
-        const template = `
-            <div class="modal__container">
-                <div class="modal__action modal__action--right">
-                    <a class="modal__close-button" href="#" data-action="close"><i class="fas fa-times"></i></a>
-                </div>
-                <div class="info-block__subtitle info-block__subtitle--centered">${tag}</div>
-                <h2 class="modal__title info-block__title info-block__title--underline">
-                    <span class="info-block__title-span">${article.title}</span>
-                </h2>
-                <div class="modal__body info-block__description">
-                    <div class="modal__paragraph-container" data-js="paragraphs"></div>
-                    <div class="modal__action modal__action--left">
-                        <div class="info-block__action info-block__action">
-                            <a href="#" class="info-block__link" data-action="close">Return</a>
-                        </div>
+
+    //@ts-ignore
+    const data = localArticles;
+
+    const article:Article = data.find( (article:Article) => article.name === name );
+    const template = `
+        <div class="modal__container">
+            <div class="modal__action modal__action--right">
+                <a class="modal__close-button" href="#" data-action="close"><i class="fas fa-times"></i></a>
+            </div>
+            <div class="info-block__subtitle info-block__subtitle--centered">${tag}</div>
+            <h2 class="modal__title info-block__title info-block__title--underline">
+                <span class="info-block__title-span">${article.title}</span>
+            </h2>
+            <div class="modal__body info-block__description">
+                <div class="modal__paragraph-container" data-js="paragraphs"></div>
+                <div class="modal__action modal__action--left">
+                    <div class="info-block__action info-block__action">
+                        <a href="#" class="info-block__link" data-action="close">Return</a>
                     </div>
                 </div>
             </div>
-            <div class="modal__overlay" data-js="modalOverlay"></div>
-        `;
-        const container = document.querySelector( '[data-js="modals"]' );
-        const modal = document.createElement( 'div' );
+        </div>
+        <div class="modal__overlay" data-js="modalOverlay"></div>
+    `;
+    const container = document.querySelector( '[data-js="modals"]' );
+    const modal = document.createElement( 'div' );
 
-        modal.className = 'modal';
-        modal.setAttribute( 'data-modal', name );
-        modal.hidden = true;
-        modal.innerHTML = template;
+    modal.className = 'modal';
+    modal.setAttribute( 'data-modal', name );
+    modal.hidden = true;
+    modal.innerHTML = template;
 
-        const paragraphContainer = modal.querySelector( '[data-js="paragraphs"]' );
-        article.paragraphs.forEach( (paragraph:any) => {
-            const p = document.createElement( 'p' );
-            p.className = 'modal__paragraph info-block__paragraph';
-            p.innerHTML = paragraph;
+    const paragraphContainer = modal.querySelector( '[data-js="paragraphs"]' );
+    article.paragraphs.forEach( (paragraph:any) => {
+        const p = document.createElement( 'p' );
+        p.className = 'modal__paragraph info-block__paragraph';
+        p.innerHTML = paragraph;
 
-            if ( !paragraphContainer ) return;
-            paragraphContainer.appendChild( p );
-        } );
-
-        if (container) container.appendChild( modal );
-        closeModalListener();
+        if ( !paragraphContainer ) return;
+        paragraphContainer.appendChild( p );
     } );
+
+    if (container) container.appendChild( modal );
+    closeModalListener();
 }
 
 

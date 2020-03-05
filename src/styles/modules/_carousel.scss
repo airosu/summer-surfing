@@ -79,3 +79,27 @@
     }
 }
 
+
+
+
+/*
+    https://flickity.metafizzy.co/extras.html#module-loaders
+    https://github.com/metafizzy/flickity/issues/906
+
+    In some cases this issue still appears, Despite of adding {imagesLoaded: true},
+    The Fix is, imagesLoaded requires the flickity-imagesloaded package. 
+    It already is included with flickity.pkgd.js, but not with Flickity as a stand-alone package. 
+    If you are using Webpack or RequireJS without flickity.pkgd.js, you need to install and require flickity-imagesloaded separately.
+
+
+    npm install flickity
+    npm install flickity-imagesloaded
+
+    var Flickity = require('flickity');
+    require('flickity-imagesloaded');
+
+    var flkty = new Flickity( '.carousel', {
+    imagesLoaded: true
+    });
+*/
+
